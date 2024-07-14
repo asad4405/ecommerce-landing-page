@@ -55,11 +55,12 @@
                         <span>Task</span>
                     </a>
                 </li>
+
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                         data-bs-target="#category" aria-expanded="false" aria-controls="category">
                         <i class="lni lni-protection"></i>
-                        <span>Category</span>
+                        <span>Categories</span>
                     </a>
                     <ul id="category" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
@@ -68,27 +69,16 @@
                         <li class="sidebar-item">
                             <a href="{{ route('category.index') }}" class="sidebar-link">Category List</a>
                         </li>
-                        <li class="sidebar-item">
-                            <a href="{{ route('subcategory.create') }}" class="sidebar-link">Add Sub Category</a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="{{ route('subcategory.index') }}" class="sidebar-link">Category Sub List</a>
-                        </li>
                     </ul>
                 </li>
+
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                        data-bs-target="#category" aria-expanded="false" aria-controls="category">
-                        <i class="lni lni-protection"></i>
-                        <span>Category</span>
+                        data-bs-target="#subcategory" aria-expanded="false" aria-controls="subcategory">
+                        <i class="lni lni-layout"></i>
+                        <span>Sub Categories</span>
                     </a>
-                    <ul id="category" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                        <li class="sidebar-item">
-                            <a href="{{ route('category.create') }}" class="sidebar-link">Add Category</a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="{{ route('category.index') }}" class="sidebar-link">Category List</a>
-                        </li>
+                    <ul id="subcategory" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
                             <a href="{{ route('subcategory.create') }}" class="sidebar-link">Add Sub Category</a>
                         </li>
@@ -97,6 +87,23 @@
                         </li>
                     </ul>
                 </li>
+
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#product" aria-expanded="false" aria-controls="product">
+                        <i class="lni lni-popup"></i>
+                        <span>Products</span>
+                    </a>
+                    <ul id="product" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="{{ route('product.create') }}" class="sidebar-link">Add Product</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ route('product.index') }}" class="sidebar-link">Product List</a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                         data-bs-target="#multi" aria-expanded="false" aria-controls="multi">

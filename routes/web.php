@@ -7,7 +7,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\UserController;
-use App\Models\Subcategory;
 use Illuminate\Support\Facades\Route;
 
 
@@ -38,6 +37,9 @@ Route::resource('category',CategoryController::class);
 
 // SubCategory
 Route::resource('/subcategory',SubcategoryController::class);
+
+// Product
+Route::resource('/product',ProductController::class);
 
 // Role Manager
 Route::get('/role/manager',[RoleController::class, 'role_manage'])->name('role.manage');
