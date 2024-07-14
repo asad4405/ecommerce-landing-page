@@ -23,8 +23,10 @@ class CategoryRequest extends FormRequest
     {
         return [
             'category_name' => 'required|unique:categories,category_name',
-            'icon' => 'required|image|mimes:png,jpg,jpeg|dimensions:min_width=400,min_height=400',
+            'icon' => 'required|image|mimes:png,jpg,jpeg|
+            ',
         ];
+        // dimensions:min_width=400,min_height=400
     }
     public function messages(): array
     {
