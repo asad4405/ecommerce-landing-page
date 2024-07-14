@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
@@ -37,6 +38,11 @@ require __DIR__.'/auth.php';
 // user
 Route::get('/user/list',[UserController::class, 'user_list'])->name('user.list');
 Route::get('/user/delete/{user_id}',[UserController::class, 'user_delete'])->name('user.delete');
+
+// Category
+Route::resource('category',CategoryController::class);
+
+// SubCategory
 
 // Role Manager
 Route::get('/role/manager',[RoleController::class, 'role_manage'])->name('role.manage');

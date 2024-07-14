@@ -45,7 +45,7 @@
                     </a>
                     <ul id="roles" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a href="{{ route('role.manage') }}" class="sidebar-link">Role</a>
+                            <a href="{{ route('role.manage') }}" class="sidebar-link">Role Manager</a>
                         </li>
                     </ul>
                 </li>
@@ -57,16 +57,16 @@
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                        data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
+                        data-bs-target="#category" aria-expanded="false" aria-controls="category">
                         <i class="lni lni-protection"></i>
-                        <span>Auth</span>
+                        <span>Category</span>
                     </a>
-                    <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <ul id="category" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Login</a>
+                            <a href="{{ route('category.create') }}" class="sidebar-link">Add Category</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Register</a>
+                            <a href="{{ route('category.index') }}" class="sidebar-link">Category List</a>
                         </li>
                     </ul>
                 </li>
