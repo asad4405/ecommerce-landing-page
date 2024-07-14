@@ -28,11 +28,24 @@
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                         data-bs-target="#users" aria-expanded="false" aria-controls="users">
                         <i class="lni lni-user"></i>
-                        <span>Profile</span>
+                        <span>Users</span>
                     </a>
                     <ul id="users" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">User list</a>
+                            <a href="{{ route('user.list') }}" class="sidebar-link">User list</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#roles" aria-expanded="false" aria-controls="roles">
+                        <i class="lni lni-layout"></i>
+                        <span>Role Manager</span>
+                    </a>
+                    <ul id="roles" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="{{ route('role.manage') }}" class="sidebar-link">Role</a>
                         </li>
                     </ul>
                 </li>
@@ -94,14 +107,22 @@
                 </li>
             </ul>
             <div class="sidebar-footer">
-                <a href="#" class="sidebar-link">
-                    <i class="lni lni-exit"></i>
-                    <span>Logout</span>
-                </a>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <a href="{{ route('logout') }}" class="sidebar-link"
+                        onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        <i class="lni lni-exit"></i>
+                        <span>Logout</span>
+                    </a>
+                </form>
             </div>
         </aside>
+        <div class="p-3 main">
 
-        @yield('content')
+            @yield('content')
+        </div>
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
