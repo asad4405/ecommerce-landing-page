@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
@@ -40,6 +41,12 @@ Route::resource('/subcategory',SubcategoryController::class);
 
 // Product
 Route::resource('/product',ProductController::class);
+
+// Inventory
+Route::get('/add/inventory/{product_id}', [InventoryController::class,'add_inventory'])->name('add.inventory');
+Route::post('/inventory/store/{product_id}', [InventoryController::class, 'inventory_store'])->name('inventory.store');
+Route::get('/inventory/list', [InventoryController::class, 'inventory_list'])->name('inventory.list');
+Route::get('/inventory/delete/{inventory_id}', [InventoryController::class, 'inventory_delete'])->name('inventory.delete');
 
 // Role Manager
 Route::get('/role/manager',[RoleController::class, 'role_manage'])->name('role.manage');

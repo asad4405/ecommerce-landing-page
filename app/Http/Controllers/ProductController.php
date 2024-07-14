@@ -45,6 +45,7 @@ class ProductController extends Controller
             'category_id' => $request->category_id,
             'subcategory_id' => $request->subcategory_id,
             'product_name' => $request->product_name,
+            'price' => $request->price,
             'product_details' => $request->product_details,
             'created_at' => Carbon::now(),
         ]);
@@ -96,6 +97,7 @@ class ProductController extends Controller
         $product->category_id = $request->category_id;
         $product->subcategory_id = $request->subcategory_id;
         $product->product_name = $request->product_name;
+        $product->price = $request->price;
         $product->product_details = $request->product_details;
         $product->save();
         return back()->with('product_success', 'Product Updated!');

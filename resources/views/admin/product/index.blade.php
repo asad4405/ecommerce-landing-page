@@ -15,6 +15,7 @@
                             <th>SL</th>
                             <th>Product Name</th>
                             <th>Product Image</th>
+                            <th>Product Price</th>
                             <th>Action</th>
                         </tr>
                         @forelse ($products as $product)
@@ -25,8 +26,10 @@
                                 <td><img src="{{ asset('uploads/product') }}/{{ App\Models\Product_photo::where('product_id',$product->id)->first()->product_photo }}" alt=""
                                         width="50">
                                 </td>
+                                <td>{{ $product->price }}</td>
                                 <td>
-                                    <a href="" class="btn btn-success">Add Stock</a>
+                                    <a href="{{ route('add.inventory',$product->id) }}" class="btn btn-success">Add Stock</a>
+
                                     <a href="{{ route('product.edit', $product->id) }}" class="btn btn-info">Edit</a>
 
                                     <form action="{{ route('product.destroy', $product->id) }}" method="POST">

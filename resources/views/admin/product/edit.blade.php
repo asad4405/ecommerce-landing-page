@@ -48,6 +48,14 @@
                             @enderror
                         </div>
                         <div class="mb-3">
+                            <label for="" class="form-label">Product Price</label>
+                            <input type="text" class="form-control @error('price') is-invalid @enderror"
+                                name="price" value="{{ $product->price }}">
+                            @error('price')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
                             <label for="" class="form-label">Product Details</label>
                             <textarea rows="6" class="form-control @error('product_details') is-invalid @enderror" name="product_details">{{ $product->product_details }}</textarea>
                             @error('product_details')
@@ -57,7 +65,7 @@
                         <div class="mt-3 mb-3">
                             <button type="submit" class="btn btn-primary">Update Product</button>
                         </div>
-                        
+
                     </form>
                 </div>
             </div>

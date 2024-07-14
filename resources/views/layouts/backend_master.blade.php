@@ -101,6 +101,10 @@
                         <li class="sidebar-item">
                             <a href="{{ route('product.index') }}" class="sidebar-link">Product List</a>
                         </li>
+
+                        <li class="sidebar-item">
+                            <a href="{{ route('inventory.list') }}" class="sidebar-link">Inventory List</a>
+                        </li>
                     </ul>
                 </li>
 
