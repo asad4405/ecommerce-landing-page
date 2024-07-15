@@ -13,11 +13,15 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/',[FrontendController::class,'index'])->name('index');
+Route::get('/', [FrontendController::class, 'index'])->name('index');
+Route::get('/product/details/{product_id}', [FrontendController::class, 'product_details'])->name('product.details');
+
+Route::get('/cart', [FrontendController::class, 'cart'])->name('cart');
+Route::get('/checkout', [FrontendController::class, 'checkout'])->name('checkout');
 
 
 // Dashboard
-Route::get('/dashboard',[HomeController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 
 Route::middleware('auth')->group(function () {
@@ -26,29 +30,26 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 // user
-Route::get('/user/list',[UserController::class, 'user_list'])->name('user.list');
-Route::get('/user/delete/{user_id}',[UserController::class, 'user_delete'])->name('user.delete');
+Route::get('/user/list', [UserController::class, 'user_list'])->name('user.list');
+Route::get('/user/delete/{user_id}', [UserController::class, 'user_delete'])->name('user.delete');
 
 // Category
-Route::resource('category',CategoryController::class);
+Route::resource('category', CategoryController::class);
 
 // SubCategory
-Route::resource('/subcategory',SubcategoryController::class);
+Route::resource('/subcategory', SubcategoryController::class);
 
 // Product
-Route::resource('/product',ProductController::class);
+Route::resource('/product', ProductController::class);
 
 // Inventory
-Route::get('/add/inventory/{product_id}', [InventoryController::class,'add_inventory'])->name('add.inventory');
+Route::get('/add/inventory/{product_id}', [InventoryController::class, 'add_inventory'])->name('add.inventory');
 Route::post('/inventory/store/{product_id}', [InventoryController::class, 'inventory_store'])->name('inventory.store');
 Route::get('/inventory/list', [InventoryController::class, 'inventory_list'])->name('inventory.list');
 Route::get('/inventory/delete/{inventory_id}', [InventoryController::class, 'inventory_delete'])->name('inventory.delete');
 
 // Role Manager
-Route::get('/role/manager',[RoleController::class, 'role_manage'])->name('role.manage');
-
-
-
+Route::get('/role/manager', [RoleController::class, 'role_manage'])->name('role.manage');
